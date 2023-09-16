@@ -1,4 +1,8 @@
+const homeController = require("./controllers/homeController")
 const express = require("express");
+
+
+//nak set server express
 const app = express();
 const port = 3000;
 
@@ -16,6 +20,7 @@ app.get("/", (req, res) => {
   res.render("index", data);
 });
 
+//nak define route
 app.get("/:nama", (req, res) => {
   const username = req.params.nama;
   const data = {
@@ -25,6 +30,7 @@ app.get("/:nama", (req, res) => {
   res.render("index", data);
 });
 
+//nak start server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
